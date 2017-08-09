@@ -1,24 +1,69 @@
 {% extends 'boldHER/base.html' %}
 
 {% block content %}
+
 	<h1>Questions about: Abortion</h1>
     {% for question in abortion_question %}
         <div class="question">
             <div class="date">
                 {{ question.published_date }}
             </div>
-            <h1><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h1>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
             <p>{{ question.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
 
-	<h1>Questions about: Sexual Assault</h1>
-    {% for question in sexual_assault_question %}
+    <h1>Questions about: Domestic Violence</h1>
+    {% for question in domestic_violence_question %}
         <div class="question">
             <div class="date">
                 {{ question.published_date }}
             </div>
-            <h1><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h1>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <p>{{ question.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+        <h1>Questions about: Education</h1>
+    {% for question in education_question %}
+        <div class="question">
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <p>{{ question.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+        <h1>Questions about: Jobs</h1>
+    {% for question in jobs_question %}
+        <div class="question">
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <p>{{ question.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+            <h1>Questions about: Other</h1>
+    {% for question in other_question %}
+        <div class="question">
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <p>{{ question.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+        <h1>Questions about: Pregnancy</h1>
+    {% for question in pregnancy_question %}
+        <div class="question">
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
             <p>{{ question.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
@@ -29,8 +74,32 @@
             <div class="date">
                 {{ question.published_date }}
             </div>
-            <h1><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h1>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
             <p>{{ question.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
+
+        <h1>Questions about: Sexism</h1>
+    {% for question in sexism_question %}
+        <div class="question">
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <p>{{ question.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
+
+	<h1>Questions about: Sexual Assault</h1>
+    {% for question in sexual_assault_question %}
+        <div class="question">
+            <div class="date">
+                {{ question.published_date }}
+            </div>
+            <h2><a href="{% url 'question_detail' pk=question.pk %}">{{ question.title }}</a></h2>
+            <p>{{ question.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+
 {% endblock %}

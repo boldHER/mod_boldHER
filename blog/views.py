@@ -21,9 +21,23 @@ def question_list(request):
 	sexual_assault_question = Question.objects.filter(category=sexual_assault_category)
 	relationship_issue_category = Category.objects.filter(title="Relationship Issue")
 	relationship_issue_question = Question.objects.filter(category = relationship_issue_category)
+	domestic_violence_category = Category.objects.filter(title="Domestic Violence")
+	domestic_violence_question = Question.objects.filter(category = domestic_violence_category)
+	education_category = Category.objects.filter(title="Education")
+	education_question = Question.objects.filter(category = education_category)
+	pregnancy_category = Category.objects.filter(title="Pregnancy")
+	pregnancy_question = Question.objects.filter(category = pregnancy_category)
+	sexism_category = Category.objects.filter(title="Sexism")
+	sexism_question = Question.objects.filter(category = sexism_category)
+	jobs_category = Category.objects.filter(title="Jobs")
+	jobs_question = Question.objects.filter(category = jobs_category)
+	other_category = Category.objects.filter(title="Other")
+	other_question = Question.objects.filter(category = other_category)
 	return render(request, 'boldHER/question_list2.html',
 	{'abortion_question' : abortion_question, 'sexual_assault_question' : sexual_assault_question,
-    'relationship_issue_question' : relationship_issue_question})
+    'relationship_issue_question' : relationship_issue_question, 'domestic_violence_question' : domestic_violence_question,
+    'education_question' : education_question, 'pregnancy_question' : pregnancy_question, 'sexism_question' : sexism_question,
+    'jobs_question' : jobs_question, 'other_question' : other_question})
 
 def question_new(request):
 	if request.method == "POST":
@@ -38,6 +52,8 @@ def question_new(request):
 		form = QuestionForm()
 	return render(request, 'boldHER/question_edit.html', {'form': form})
 
+def original_page(request):
+	return render(request, 'boldHER/index.html')
 
 def answer_new(request, pk):
 	# Get the question that this goes to

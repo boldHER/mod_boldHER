@@ -36,7 +36,7 @@ class Answer(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title
+        return self.answer_text
 
 class Comment(models.Model):
     author = models.ForeignKey('auth.User')

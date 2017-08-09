@@ -13,4 +13,4 @@ class AnswerForm(forms.ModelForm):
 
     class Meta:
         model = Answer
-        fields = ('title', 'author', 'answer_text',)
+        fields = ('author', 'answer_text',)
