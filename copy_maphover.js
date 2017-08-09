@@ -44,7 +44,7 @@ for (var index = 0; index < totalPlaces.length; index++){
   console.log(type);
   if (type == "EE"){
     type = "college";
-  } 
+  }
   else if (type == "Health"){
     type = "heart";
     console.log("Is this health?")
@@ -58,9 +58,9 @@ for (var index = 0; index < totalPlaces.length; index++){
         coordinates: [totalPlaces[index][7], totalPlaces[index][6]]
       },
      properties: {
-      title: totalPlaces[index][4] + " |  " + totalPlaces[index][9], 
+      title: totalPlaces[index][4] + " |  " + totalPlaces[index][9],
        "description": totalPlaces[index][5] + "<p><a href= " + totalPlaces[index][3] + "\"title=\"Opens in a new window\">Donate<br></a>" + "<a href= " + totalPlaces[index][2] + "\"title=\"Opens in a new window\">See Website</a></p>",
-      'marker-symbol': type,   
+      'marker-symbol': type,
       'url': totalPlaces[index][3]
     }
     },
@@ -74,7 +74,7 @@ for (var index = 0; index < totalPlaces.length; index++){
   };
   myLayer.addTo(map);
   //mapGeo.scrollWheelZoom.disable();
-} 
+}
 
   var popup = new L.Popup({ autoPan: false});
 
@@ -90,13 +90,13 @@ for (var index = 0; index < totalPlaces.length; index++){
 
   // get color depending on population density value
   function getColor(d) {
-      return d > 1000 ? '#8c2d04' :
-          d > 500  ? '#cc4c02' :
-          d > 200  ? '#ec7014' :
-          d > 100  ? '#fe9929' :
-          d > 50   ? '#fec44f' :
-          d > 20   ? '#fee391' :
-          d > 10   ? '#fff7bc' :
+      return d > 1000 ? '#A02C30' :
+          d > 500  ? '#A02C30' :
+          d > 200  ? '#E70008' :
+          d > 100  ? '#FC0A12' :
+          d > 50   ? '#FF2E35' :
+          d > 20   ? '#FF595E' :
+          d > 10   ? '#FA9A9D' :
           '#ffffe5';
   }
 
@@ -111,7 +111,7 @@ for (var index = 0; index < totalPlaces.length; index++){
   var closeTooltip;
 
   function mousemove(e) {
-    
+
     var layer = e.target;
 
     for(var i = 0; i < totalPlaces.length; i++)
@@ -122,7 +122,7 @@ for (var index = 0; index < totalPlaces.length; index++){
         {
         //   console.log("there are places here with programs!");
            var density = layer.feature.properties.density;
-           layer.feature.properties = 
+           layer.feature.properties =
            {
                "name" : statename,
                "density" : density,
@@ -130,7 +130,7 @@ for (var index = 0; index < totalPlaces.length; index++){
 
         }
     }
-      
+
       popup.setLatLng(e.latlng);
       popup.setContent('<div class="marker-title">' + layer.feature.properties.name + '</div>');
 
