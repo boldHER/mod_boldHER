@@ -90,13 +90,13 @@ for (var index = 0; index < totalPlaces.length; index++){
 
   // get color depending on population density value
   function getColor(d) {
-      return d > 1000 ? '#8c2d04' :
-          d > 500  ? '#cc4c02' :
-          d > 200  ? '#ec7014' :
-          d > 100  ? '#fe9929' :
-          d > 50   ? '#fec44f' :
-          d > 20   ? '#fee391' :
-          d > 10   ? '#fff7bc' :
+      return d > 1000 ? '#A02C30' :
+          d > 500  ? '#A02C30' :
+          d > 200  ? '#E70008' :
+          d > 100  ? '#FC0A12' :
+          d > 50   ? '#FF2E35' :
+          d > 20   ? '#FF595E' :
+          d > 10   ? '#FA9A9D' :
           '#ffffe5';
   }
 
