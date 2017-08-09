@@ -1,0 +1,9 @@
+{% extends 'boldHER/base.html' %}
+
+{% block content %}
+    <h1>New Question</h1>
+    <form method="POST" class="question-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
