@@ -1,0 +1,36 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>boldHER Forum</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        
+<body>
+    </head>
+
+    <body>
+        <div class="page-header">
+            <a href="{% url 'question_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">boldHER Forum</a></h1>
+            <div class="w3-container">
+               <div align="right">
+               <p><a href="https://boldher.github.io/mod_boldHER/home.html" button class="w3-button w3-white w3-round-large">Click to go back to boldHER</button></p></a>
+               </div>
+            </div>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
