@@ -59,7 +59,7 @@ for (var index = 0; index < totalPlaces.length; index++){
       },
      properties: {
       title: totalPlaces[index][4] + " |  " + totalPlaces[index][9], 
-       "description": totalPlaces[index][5] + "<p><a href= " + totalPlaces[index][3] + "\"title=\"Opens in a new window\">Donate<br></a>" + "<a href= " + totalPlaces[index][2] + "\"title=\"Opens in a new window\">See Website</a></p>",
+       "description": totalPlaces[index][5] + "<p><a target="_blank" href= " + totalPlaces[index][3] + "\"title=\"Opens in a new window\">Donate<br></a>" + "<a href= " + totalPlaces[index][2] + "\"title=\"Opens in a new window\">See Website</a></p>",
       'marker-symbol': type,   
       'url': totalPlaces[index][3]
     }
