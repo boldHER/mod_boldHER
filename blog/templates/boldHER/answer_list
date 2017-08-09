@@ -1,0 +1,13 @@
+{% extends 'boldHER/base.html' %}
+
+{% block content %}
+    {% for answer in answers %}
+        <div class="answer">
+            <div class="date">
+                {{ answer.published_date }}
+            </div>
+            <h1><a href="{% url 'answer_detail' pk=answer.pk %}">{{ answer.title }}</a></h1>
+            <p>{{ answer.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

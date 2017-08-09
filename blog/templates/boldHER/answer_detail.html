@@ -1,0 +1,16 @@
+{% extends 'boldHER/base.html' %}
+
+{% block content %}
+    <div class="answer">
+    	<p>{{ answer.category|linebreaksbr }}</p>
+        {% if answer.published_date %}
+            <div class="date">
+                {{ answer.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'answer_edit' pk=answer.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h3>{{ answer.title }}</h3>
+        <p>{{ answer.author|linebreaksbr }}</p>
+        <h4>{{ answer.answer_text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
