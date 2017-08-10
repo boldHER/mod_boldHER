@@ -1,5 +1,6 @@
 from django.shortcuts import redirect
 from django.shortcuts import render
+from django.contrib.auth import get_user
 from django.utils import timezone
 from .models import Question, Category, Answer
 from django.shortcuts import render, get_object_or_404
@@ -44,7 +45,7 @@ def question_new(request):
 		form = QuestionForm(request.POST)
 		if form.is_valid():
 			question = form.save(commit=False)
-			question.author = request.user
+			question.author = get_user(request)
 			question.published_date = timezone.now()
 			question.save()
 			return redirect('question_detail', pk=question.pk)
@@ -62,7 +63,7 @@ def answer_new(request, pk):
 		form = AnswerForm(request.POST)
 		if form.is_valid():
 			answer = form.save(commit=False)
-			answer.author = request.user
+			answer.author = get_user(request)
 			answer.published_date = timezone.now()
 			answer.question = question
 			answer.save()
@@ -77,7 +78,7 @@ def question_edit(request, pk):
         form = QuestionForm(request.POST, instance=question)
         if form.is_valid():
             question = form.save(commit=False)
-            question.author = request.user
+            question.author = get_user(request)
             question.published_date = timezone.now()
             question.save()
             return redirect('question_detail', pk=question.pk)
@@ -91,7 +92,7 @@ def answer_edit(request, pk):
         form = AnswerForm(request.POST, instance=answer)
         if form.is_valid():
             answer = form.save(commit=False)
-            answer.author = request.user
+            answer.author = get_user(request)
             answer.published_date = timezone.now()
             answer.save()
             return redirect('answer_detail', pk=answer.pk)
